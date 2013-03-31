@@ -27,3 +27,10 @@ You can also stub a method locally to a block:
 
     x.to_s # Bananas
     y.to_s # Pears
+
+## Development
+
+Tests are done via minitest. Should be this simple:
+
+    bundle install
+    bundle exec rake test
