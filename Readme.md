@@ -1,8 +1,8 @@
 Simple ruby stubbing
 ==========
 
-    Opens up `Object` to add instance and class methods called
-    `instance_stub`.
+Opens up `Object` to add instance and class methods called
+`instance_stub`.
 
 ## Stubbing all instances of a class
 
