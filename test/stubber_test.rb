@@ -3,7 +3,7 @@ require 'stubber'
 require 'minitest/autorun'
 
 class StubberTest < MiniTest::Unit::TestCase
-  def test_instance_stub
+  def test_class_level_stub_with_block
     x = "Apples"
     String.instance_stub :to_s, "Bananas" do
       assert_equal "Bananas", x.to_s
@@ -14,7 +14,7 @@ class StubberTest < MiniTest::Unit::TestCase
 
   def test_instance_stub_with_block
     x = "Apples"
-    x.custom_stub :to_s, "Bananas" do
+    x.instance_stub :to_s, "Bananas" do
       assert_equal "Bananas", x.to_s
     end
 
@@ -23,7 +23,7 @@ class StubberTest < MiniTest::Unit::TestCase
 
   def test_instance_stub_side_effects
     x = "Apples"
-    x.custom_stub :to_s, "Bananas"
+    x.instance_stub :to_s, "Bananas"
     assert_equal "Bananas", x.to_s
     assert_equal "Apples", "Apples".to_s
   end

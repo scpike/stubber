@@ -7,13 +7,15 @@ class Object
     define_method method do |*args|
       result
     end
-    yield
 
-    # Restore the old method outside of the block
-    alias_method method, new_name
+    if block
+      yield
+      # Restore the old method outside of the block
+      alias_method method, new_name
+    end
   end
 
-  def custom_stub(method_name, result, &block)
+  def instance_stub(method_name, result, &block)
     old_method = method(method_name)
     #new_name = "_custom_stubbed_#{method}"
     define_singleton_method method_name do |*args|
