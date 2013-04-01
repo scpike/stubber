@@ -1,6 +1,8 @@
 Simple ruby stubbing
 ==========
 
+[![Build Status](https://travis-ci.org/scpike/stubber.png?branch=master)](https://travis-ci.org/scpike/stubber)
+
 Opens up `Object` to add instance and class methods called
 `instance_stub`.
 
